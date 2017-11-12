@@ -85,6 +85,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.amaze.filemanager.R;
 import com.amaze.filemanager.activities.superclasses.ThemedActivity;
 import com.amaze.filemanager.adapters.DrawerAdapter;
+import com.amaze.filemanager.adapters.RecyclerAdapter;
 import com.amaze.filemanager.asynchronous.asynctasks.DeleteTask;
 import com.amaze.filemanager.asynchronous.asynctasks.MoveFiles;
 import com.amaze.filemanager.asynchronous.asynctasks.PrepareCopyTask;
@@ -174,7 +175,7 @@ public class MainActivity extends ThemedActivity implements
         GoogleApiClient.OnConnectionFailedListener, OnRequestPermissionsResultCallback,
         SmbConnectionListener, DataChangeListener, BookmarkCallback,
         SearchWorkerFragment.HelperCallbacks, CloudConnectionCallbacks,
-        LoaderManager.LoaderCallbacks<Cursor> {
+        LoaderManager.LoaderCallbacks<Cursor>, KeyEvent.Callback {
 
     public static final Pattern DIR_SEPARATOR = Pattern.compile("/");
     public static final String TAG_ASYNC_HELPER = "async_helper";
@@ -1311,6 +1312,16 @@ public class MainActivity extends ThemedActivity implements
             */
             // return 'true' to prevent further propagation of the key event
             return true;
+        }
+
+        if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT) {
+
+            // focus to main fragment list
+            RecyclerAdapter mainFragmentAdapter = getCurrentMainFragment().getAdapter();
+            if (mainFragmentAdapter != null) {
+                mainFragmentAdapter.onKeyDown(KeyEvent.KEYCODE_DPAD_RIGHT, null);
+                return true;
+            }
         }
 
         return super.onKeyDown(keyCode, event);

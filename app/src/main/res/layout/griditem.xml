@@ -1,10 +1,13 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="170dp"
-             android:id="@+id/second"
-             android:background="@drawable/item_doc_grid"
-             android:foreground="@drawable/item_backgrund"
-             android:layout_margin="2dp">
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    android:id="@+id/second"
+    android:background="@drawable/item_doc_grid"
+    android:foreground="@drawable/item_backgrund"
+    android:focusable="true"
+    android:nextFocusDown="@+id/properties"
+    android:layout_margin="2dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,6 +23,7 @@
             android:layout_marginBottom="6dp"
             android:background="#fff"
             android:foregroundGravity="fill"
+            android:focusable="true"
             >
 
             <ImageView
@@ -64,6 +68,7 @@
                 style="@android:style/TextAppearance.Small" />
 
         </FrameLayout>
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -77,6 +82,8 @@
                 android:layout_centerVertical="true"
                 android:padding="1dp"
                 android:clickable="true"
+                android:focusable="true"
+                android:nextFocusUp="@id/second"
                 android:src="@drawable/ic_more_vert_black_48dp"/>
 
             <LinearLayout

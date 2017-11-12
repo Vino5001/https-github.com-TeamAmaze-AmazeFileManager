@@ -1657,6 +1657,10 @@ public class MainFragment extends android.support.v4.app.Fragment implements Bot
         }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
+    public RecyclerAdapter getAdapter() {
+        return adapter;
+    }
+
     public static void launchSMB(final SmbFile smbFile, final long si, final Activity activity) {
         final Streamer s = Streamer.getInstance();
         new Thread() {

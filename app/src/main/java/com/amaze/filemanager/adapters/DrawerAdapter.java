@@ -196,7 +196,6 @@ public class DrawerAdapter extends ArrayAdapter<Item> {
                     txtTitle.setTextColor(Utils.getColor(m, android.R.color.white));
                 }
             }
-
             return view;
         }
     }

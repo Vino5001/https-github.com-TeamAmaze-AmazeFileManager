@@ -75,7 +75,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="?selectableItemBackground"
+                        android:focusable="true"
                         android:layout_marginLeft="@dimen/material_generic_medium"
+                        android:nextFocusDown="@+id/startStopButton"
                         />
                 </LinearLayout>
 
@@ -116,6 +118,8 @@
                     android:text="@string/start_ftp"
                     android:id="@+id/startStopButton"
                     android:background="?android:attr/selectableItemBackground"
+                    android:focusable="true"
+                    android:nextFocusUp="@id/ftp_password_visible"
                     android:layout_marginBottom="@dimen/material_generic"
                     />
             </LinearLayout>

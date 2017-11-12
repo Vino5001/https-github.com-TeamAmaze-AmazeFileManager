@@ -61,6 +61,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
+            android:focusable="true"
+            android:nextFocusRight="@+id/cwriteown"
             />
 
         <CheckBox
@@ -68,6 +70,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
+            android:focusable="true"
+            android:nextFocusRight="@+id/cexeown"
+            android:nextFocusLeft="@+id/creadown"
             />
 
         <CheckBox
@@ -75,6 +80,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
+            android:focusable="true"
+            android:nextFocusRight="@+id/creadgroup"
+            android:nextFocusLeft="@+id/cwriteown"
             />
     </TableRow>
     <TableRow
@@ -89,17 +97,29 @@
         <CheckBox
             android:id="@+id/creadgroup"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:nextFocusRight="@+id/cwritegroup"
+            android:nextFocusLeft="@+id/cexeown"
+            />
 
         <CheckBox
             android:id="@+id/cwritegroup"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:nextFocusRight="@+id/cexegroup"
+            android:nextFocusLeft="@+id/creadgroup"
+            />
 
         <CheckBox
             android:id="@+id/cexegroup"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:nextFocusRight="@+id/creadother"
+            android:nextFocusLeft="@+id/cwritegroup"
+            />
     </TableRow>
     <TableRow
         android:layout_width="fill_parent"
@@ -113,16 +133,27 @@
         <CheckBox
             android:id="@+id/creadother"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:nextFocusRight="@+id/cwriteother"
+            android:nextFocusLeft="@+id/cexegroup"
+            />
 
         <CheckBox
             android:id="@+id/cwriteother"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:nextFocusRight="@+id/cexeother"
+            android:nextFocusLeft="@+id/creadother"
+            />
 
         <CheckBox
             android:id="@+id/cexeother"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:nextFocusLeft="@+id/cwriteother"
+            />
     </TableRow>
 </TableLayout>
